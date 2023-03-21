@@ -44,7 +44,14 @@ export class PomodoroTimerComponent implements OnInit{
   }
 // stop function
   stop() {
-    clearInterval(this.timer)
+    clearInterval(this.timer);
+
+  }
+
+  play() {
+    this.timer =setInterval(()=>{
+      this.ticks();
+    },1000);
   }
 }
 
