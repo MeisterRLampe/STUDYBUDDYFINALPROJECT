@@ -31,8 +31,8 @@ export class PomodoroTimerComponent implements OnInit{
     }
 
   }
-
-  private ticks() {
+    // Counting seconds and minutes backwards
+    ticks() {
     if(this.seconds>0){
       this.seconds--;
     }else if (this.minutes >0){
@@ -42,4 +42,12 @@ export class PomodoroTimerComponent implements OnInit{
       clearInterval(this.timer)
     }
   }
+// stop function
+  stop() {
+    clearInterval(this.timer)
+  }
 }
+
+
+
+
