@@ -5,8 +5,7 @@ import {LearnerHubComponent} from "./learner-hub/learner-hub.component";
 import {RoadmapComponent} from "./roadmap/roadmap.component";
 
 const routes: Routes = [
-  {path: "", redirectTo: "welcome", pathMatch:"full"},
-  {path: "welcome", component: WelcomePageComponent},
+  {path: "", component: WelcomePageComponent},
   {path: "hub", component: LearnerHubComponent},
   {path: "roadmap", component: RoadmapComponent},
 ];
