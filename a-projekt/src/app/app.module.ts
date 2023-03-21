@@ -5,12 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RoadmapComponent } from './roadmap/roadmap.component';
+import { LearnerHubComponent } from './learner-hub/learner-hub.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomePageComponent,
-    NavbarComponent
+    NavbarComponent,
+    RoadmapComponent,
+    LearnerHubComponent
   ],
   imports: [
     BrowserModule,
