@@ -1,0 +1,15 @@
+h1 {
+  font-size: 6em;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.div-container {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+
