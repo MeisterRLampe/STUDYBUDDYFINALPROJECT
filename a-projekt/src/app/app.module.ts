@@ -7,6 +7,8 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RoadmapComponent } from './roadmap/roadmap.component';
 import { LearnerHubComponent } from './learner-hub/learner-hub.component';
+import {HttpClientModule} from "@angular/common/http";
+import { PomodoroTimerComponent } from './pomodoro-timer/pomodoro-timer.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { LearnerHubComponent } from './learner-hub/learner-hub.component';
     WelcomePageComponent,
     NavbarComponent,
     RoadmapComponent,
-    LearnerHubComponent
+    LearnerHubComponent,
+    PomodoroTimerComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
