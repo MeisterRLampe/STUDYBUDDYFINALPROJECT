@@ -10,5 +10,15 @@ import {HttpClient} from "@angular/common/http";
 })
 export class WelcomePageComponent  {
 
+  isLoggedIn(): boolean {
+    return localStorage.getItem('token') !== null;
+  }
+
+  getUsername(): string {
+    // @ts-ignore
+    return localStorage.getItem('username');
+  }
+
 
 }
+

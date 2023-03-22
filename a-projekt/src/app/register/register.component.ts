@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user-service.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-register',
@@ -12,7 +14,8 @@ export class RegisterComponent implements OnInit {
   confirmPassword: string = '';
   message: string = '';
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
+
 
   ngOnInit(): void {
   }
@@ -20,7 +23,8 @@ export class RegisterComponent implements OnInit {
   register(): void {
     this.userService.register(this.username, this.password, this.confirmPassword).subscribe(
       data => {
-        this.message = 'Registrierung erfolgreich!';
+        this.message = 'Registrierung erfolgreich! Sie werden weitergeleitet..';
+        this.router.navigate(['/login']);
       },
       error => {
         this.message = 'Registrierung fehlgeschlagen!';

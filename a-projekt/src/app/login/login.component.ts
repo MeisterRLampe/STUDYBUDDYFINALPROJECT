@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user-service.service';
+import { Router } from '@angular/router';
+
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,7 +13,8 @@ export class LoginComponent implements OnInit {
   password: string = '';
   message: string = '';
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
+
 
   ngOnInit(): void {
   }
@@ -18,11 +22,12 @@ export class LoginComponent implements OnInit {
   login(): void {
     this.userService.login(this.username, this.password).subscribe(
       data => {
-
         localStorage.setItem('token', data.id);
         localStorage.setItem('isAdmin', data.user.admin);
         localStorage.setItem('username', this.username);
-        this.message = 'Login erfolgreich!';
+        this.message = 'Login erfolgreich! Sie werden weitergeleitet..';
+        this.router.navigate(['/']);
+
       },
       error => {
         this.message = `Login fehlgeschlagen! Username oder Password falsch!`;
