@@ -13,9 +13,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {FormsModule} from "@angular/forms";
 
-import { FullCalendarModule } from '@fullcalendar/angular';
-import {FormsModule} from "@angular/forms";
 import { CalendarComponent } from './calendar/calendar.component';
+import {FullCalendarModule} from "@fullcalendar/angular";
 
 
 @NgModule({
