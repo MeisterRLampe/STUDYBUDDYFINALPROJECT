@@ -9,6 +9,9 @@ import { RoadmapComponent } from './roadmap/roadmap.component';
 import { LearnerHubComponent } from './learner-hub/learner-hub.component';
 import {HttpClientModule} from "@angular/common/http";
 import { PomodoroTimerComponent } from './pomodoro-timer/pomodoro-timer.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -17,12 +20,15 @@ import { PomodoroTimerComponent } from './pomodoro-timer/pomodoro-timer.componen
     NavbarComponent,
     RoadmapComponent,
     LearnerHubComponent,
-    PomodoroTimerComponent
+    PomodoroTimerComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
