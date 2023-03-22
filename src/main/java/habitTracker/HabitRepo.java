@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface HabitRepo extends CrudRepository<Habit, Long> {
 
-    List<User> findByUser(User user);
+    List<Habit> findByUserId(String id);
 }

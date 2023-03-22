@@ -2,9 +2,13 @@ package habitTracker;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.userdetails.User;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Getter
 @Setter
@@ -21,6 +25,9 @@ public class Habit {
     private boolean sunday;
     @Id
     private Long id;
+
     private User user;
+
+
 
 }

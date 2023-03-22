@@ -9,6 +9,7 @@ import { RoadmapComponent } from './roadmap/roadmap.component';
 import { LearnerHubComponent } from './learner-hub/learner-hub.component';
 import {HttpClientModule} from "@angular/common/http";
 import { PomodoroTimerComponent } from './pomodoro-timer/pomodoro-timer.component';
+import { HabitTrackerComponent } from './habit-tracker/habit-tracker.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PomodoroTimerComponent } from './pomodoro-timer/pomodoro-timer.componen
     NavbarComponent,
     RoadmapComponent,
     LearnerHubComponent,
-    PomodoroTimerComponent
+    PomodoroTimerComponent,
+    HabitTrackerComponent
   ],
   imports: [
     BrowserModule,
