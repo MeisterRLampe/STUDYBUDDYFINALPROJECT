@@ -13,6 +13,11 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {FormsModule} from "@angular/forms";
 
+import { FullCalendarModule } from '@fullcalendar/angular';
+import {FormsModule} from "@angular/forms";
+import { CalendarComponent } from './calendar/calendar.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,13 +27,15 @@ import {FormsModule} from "@angular/forms";
     LearnerHubComponent,
     PomodoroTimerComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    FullCalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

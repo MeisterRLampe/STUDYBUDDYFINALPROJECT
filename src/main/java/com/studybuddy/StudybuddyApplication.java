@@ -8,6 +8,7 @@ public class StudybuddyApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(StudybuddyApplication.class, args);
+		System.out.println("running");
 	}
 
 }
