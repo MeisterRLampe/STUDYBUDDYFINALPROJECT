@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" th:href="@{/style.css}">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit User</title>
+</head>
+<body>
+<section class="hero is-fullheight">
+    <div class="hero-body ">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-4">
+                    <h1 class="textcolor is-size-1">Edit User: </h1>
+                    <div class="box color3">
+                        <label class="label textcolor">ID</label>
+                        <div class="input color1" th:text="${user.getUserID()}"></div>
+                        <label class="label textcolor">Name</label>
+                        <div class="input color1" th:text="${user.getUserName()}"></div>
+                    </div>
+                    <form th:object="${user}" method="post" th:action="@{'/user/' + ${user.getUserID()}}">
+                        <button class="button color5 textcolor" th:if="${user.admin == false}" type="submit">Change to Admin</button>
+                        <button class="button color5 textcolor" th:if="${user.admin != false}" type="submit">Change to User</button>
+                        <button class="button color5 textcolor"> <a th:href="@{/userlist}">Back to User List</a></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
