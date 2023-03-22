@@ -9,7 +9,11 @@ import { RoadmapComponent } from './roadmap/roadmap.component';
 import { LearnerHubComponent } from './learner-hub/learner-hub.component';
 import {HttpClientModule} from "@angular/common/http";
 import { PomodoroTimerComponent } from './pomodoro-timer/pomodoro-timer.component';
-import { HabitTrackerComponent } from './habit-tracker/habit-tracker.component';
+
+import { FullCalendarModule } from '@fullcalendar/angular';
+import {FormsModule} from "@angular/forms";
+import { CalendarComponent } from './calendar/calendar.component';
+
 
 @NgModule({
   declarations: [
@@ -19,12 +23,14 @@ import { HabitTrackerComponent } from './habit-tracker/habit-tracker.component';
     RoadmapComponent,
     LearnerHubComponent,
     PomodoroTimerComponent,
-    HabitTrackerComponent
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    FullCalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
