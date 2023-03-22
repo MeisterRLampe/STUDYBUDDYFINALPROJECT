@@ -10,6 +10,11 @@ import { LearnerHubComponent } from './learner-hub/learner-hub.component';
 import {HttpClientModule} from "@angular/common/http";
 import { PomodoroTimerComponent } from './pomodoro-timer/pomodoro-timer.component';
 
+import { FullCalendarModule } from '@fullcalendar/angular';
+import {FormsModule} from "@angular/forms";
+import { CalendarComponent } from './calendar/calendar.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,12 +22,15 @@ import { PomodoroTimerComponent } from './pomodoro-timer/pomodoro-timer.componen
     NavbarComponent,
     RoadmapComponent,
     LearnerHubComponent,
-    PomodoroTimerComponent
+    PomodoroTimerComponent,
+    CalendarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    FullCalendarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
