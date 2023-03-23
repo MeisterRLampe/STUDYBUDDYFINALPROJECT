@@ -18,10 +18,10 @@ public class HabitTrackerController {
         this.habitTrackerService = htService;
 
     }
-    @GetMapping("/habitTracker/{id)")
+    /*@GetMapping("/habitTracker/{id)")
     public List<Habit> habitTracker(@PathVariable String id){
         return  habitRepo.findByUserId(id);
-    }
+    }*/
 
     @GetMapping("/createUser")
     public String createUser (){

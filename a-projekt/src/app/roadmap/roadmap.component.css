@@ -6,8 +6,11 @@ h1{
 }
 
 button{
+  text-shadow: whitesmoke 2px 2px;
+  font-weight: bolder;
   border-radius: 15px;
   font-size: 35px;
+  background-color: #dce8ec;
 }
 li{
   justify-content: center;
@@ -20,6 +23,7 @@ li{
   grid-template-rows: repeat(8, 1fr);
   grid-template-areas:
     ". . . . javabasics . . ."
+    ". . . . . . . ."
     ". . springdata backend git frontend js ."
     ". . http . tdd . htmlcss ."
     "jpa mvc sql . . . . ."
