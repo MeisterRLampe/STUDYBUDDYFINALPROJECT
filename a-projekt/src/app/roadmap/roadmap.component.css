@@ -16,17 +16,16 @@ li{
 
 .grid-container {
   display: grid;
-  grid-gap: 10px;
+  grid-gap: 45px;
   grid-template-rows: repeat(8, 1fr);
   grid-template-areas:
     ". . . . javabasics . . ."
     ". . springdata backend git frontend js ."
-    ". . . . . . . ."
-    ". . . . . . . ."
-    ". . . . . . . ."
-    ". . . . . . . ."
-    ". . . . . . . ."
-    ". . . . . . . ."
+    ". . http . tdd . htmlcss ."
+    "jpa mvc sql . . . . ."
+    ". pattern . springf restapi angular . ."
+    ". . . . . thymeleaf . ."
+
 
 ;
 
