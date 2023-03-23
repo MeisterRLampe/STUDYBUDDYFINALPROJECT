@@ -1,26 +1,17 @@
 package com.studybuddy.session;
 
-
 import com.studybuddy.user.User;
 import com.studybuddy.user.UserRepo;
-import jakarta.servlet.http.Cookie;
-import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.FieldError;
-import org.springframework.web.bind.annotation.CookieValue;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.Instant;
 import java.util.Optional;
 
-
-@Controller
+@RestController
+@RequestMapping("/api")
 public class SessionController {
     private UserRepo userRepo;
     private SessionRepo sessionRepo;
@@ -31,35 +22,33 @@ public class SessionController {
         this.sessionRepo = sessionRepo;
     }
 
-    @GetMapping("/login")
-    public String loginUser(Model model) {
-        model.addAttribute("user", new User());
-        return "login";
-    }
-
     @PostMapping("/login")
-    public String loginUser(@ModelAttribute("user") User user, BindingResult result,
-                            HttpServletResponse response) {
+    public ResponseEntity<?> loginUser(@RequestBody User user) {
         Optional<User> userOpt = userRepo.findByUserNameAndPassword(user.getUserName(), user.getPassword());
         if (userOpt.isPresent()) {
             Session session = new Session(userOpt.get(), Instant.now().plusSeconds(7 * 24 * 60 * 60));
             sessionRepo.save(session);
-            Cookie cookie = new Cookie("sessionId", session.getId());
-            response.addCookie(cookie);
-            return "redirect:/";
+            return ResponseEntity.ok(session);
         }
-        result.addError(new FieldError("user", "password", "Login not successful"));
-        return "login";
+        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Falscher Benutzername oder Passwort");
+    }
+/*
+    @PostMapping("/login")
+    public Session loginUser(@RequestBody User user) {
+        Optional<User> userOpt = userRepo.findByUserNameAndPassword(user.getUserName(), user.getPassword());
+        if (userOpt.isPresent()) {
+            Session session = new Session(userOpt.get(), Instant.now().plusSeconds(7 * 24 * 60 * 60));
+            sessionRepo.save(session);
+            return session;
+        }
+        return null;
     }
 
+ */
+
     @PostMapping("/logout")
-    public String logout(@CookieValue(value = "sessionId", defaultValue = "") String sessionId,
-                         HttpServletResponse response) {
+    public void logout(@RequestParam("sessionId") String sessionId) {
         Optional<Session> optionalSession = sessionRepo.findByIdAndExpiresAtAfter(sessionId, Instant.now());
         optionalSession.ifPresent(session -> sessionRepo.delete(session));
-        Cookie cookie = new Cookie("sessionId", "");
-        cookie.setMaxAge(0);
-        response.addCookie(cookie);
-        return "redirect:/";
     }
 }

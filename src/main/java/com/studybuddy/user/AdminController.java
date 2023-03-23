@@ -2,55 +2,44 @@ package com.studybuddy.user;
 
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
+@RestController
+@RequestMapping("/api")
 @NoArgsConstructor
-@Controller
 public class AdminController {
     private UserRepo userRepo;
+
     @Autowired
-    public AdminController(UserRepo userRepo){
+    public AdminController(UserRepo userRepo) {
         this.userRepo = userRepo;
     }
 
     @GetMapping("/userlist")
-    public String showAdminPage(Model model){
-        Iterable<User> users = userRepo.findAll();
-        model.addAttribute("users", users);
-        return "userList";
+    public List<User> showAdminPage() {
+        return (List<User>) userRepo.findAll();
     }
 
     @PostMapping("/userlist")
-    public String refreshAdminPage(@ModelAttribute Iterable<User> users, Model model){
-
-        model.addAttribute("users", users);
-
-        return "redirect:/userList";
+    public List<User> refreshAdminPage(@RequestBody List<User> users) {
+        userRepo.saveAll(users);
+        return users;
     }
+
     @GetMapping("/user/{id}")
-    public String editUser (@PathVariable long id,Model model){
-        User user = userRepo.findById(id).get();
-        model.addAttribute("user",user);
-        return "editUser";
+    public User editUser(@PathVariable long id) {
+        return userRepo.findById(id).orElse(null);
     }
 
     @PostMapping("/user/{id}")
-    public String setAdmin (@PathVariable long id, Model model){
-        User user = userRepo.findById(id).get();
-        if(user.isAdmin() == false) {
-            user.setAdmin(true);
+    public User setAdmin(@PathVariable long id) {
+        User user = userRepo.findById(id).orElse(null);
+        if (user != null) {
+            user.setAdmin(!user.isAdmin());
+            userRepo.save(user);
         }
-        else {
-            user.setAdmin(false);
-        }
-
-        userRepo.save(user);
-        model.addAttribute("user",user);
-
-        return "editUser";
-
+        return user;
     }
-
 }

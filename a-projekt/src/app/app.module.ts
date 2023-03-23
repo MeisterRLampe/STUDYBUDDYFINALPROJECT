@@ -9,10 +9,12 @@ import { RoadmapComponent } from './roadmap/roadmap.component';
 import { LearnerHubComponent } from './learner-hub/learner-hub.component';
 import {HttpClientModule} from "@angular/common/http";
 import { PomodoroTimerComponent } from './pomodoro-timer/pomodoro-timer.component';
-
-import { FullCalendarModule } from '@fullcalendar/angular';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 import {FormsModule} from "@angular/forms";
+
 import { CalendarComponent } from './calendar/calendar.component';
+import {FullCalendarModule} from "@fullcalendar/angular";
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import { CalendarComponent } from './calendar/calendar.component';
     RoadmapComponent,
     LearnerHubComponent,
     PomodoroTimerComponent,
+    LoginComponent,
+    RegisterComponent,
     CalendarComponent,
   ],
   imports: [

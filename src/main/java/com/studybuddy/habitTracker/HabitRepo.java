@@ -1,7 +1,7 @@
-package habitTracker;
+package com.studybuddy.habitTracker;
 
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.security.core.userdetails.User;
+
 
 import java.util.List;
 
