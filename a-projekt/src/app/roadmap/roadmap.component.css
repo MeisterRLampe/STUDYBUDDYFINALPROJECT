@@ -1,0 +1,93 @@
+h1{
+  font-size: 15px;
+  font-weight: bolder;
+  display: flex;
+  justify-content: center;
+}
+
+button{
+  border-radius: 15px;
+  font-size: 35px;
+}
+li{
+  justify-content: center;
+  display: flex;
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-areas:
+    ". . . . javabasics . . ."
+    ". . springdata backend git frontend js ."
+    ". . . . . . . ."
+    ". . . . . . . ."
+    ". . . . . . . ."
+    ". . . . . . . ."
+    ". . . . . . . ."
+    ". . . . . . . ."
+
+;
+
+
+}
+.grid-container button {
+  font-size: 18px;
+  padding: 10px;
+}
+
+
+.javabasics{
+  grid-area: javabasics;
+}
+.backend{
+  grid-area: backend;
+}
+.frontend{
+  grid-area: frontend;
+}
+.git{
+  grid-area: git;
+}
+.tdd{
+  grid-area: tdd;
+}
+.restapi{
+  grid-area: restapi;
+}
+.htmlcss{
+  grid-area: htmlcss;
+}
+.springf{
+  grid-area: springf;
+}
+.http{
+  grid-area: http;
+}
+.mvc{
+  grid-area: mvc;
+}
+.pattern{
+  grid-area: pattern;
+}
+.jpa{
+  grid-area: jpa;
+}
+.sql{
+  grid-area: sql;
+}
+.springdata{
+  grid-area: springdata;
+}
+.angular{
+  grid-area: angular;
+}
+.thymeleaf{
+  grid-area: thymeleaf;
+}
+.js{
+  grid-area: js;
+}
+
+
