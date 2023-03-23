@@ -19,6 +19,5 @@ export class WelcomePageComponent  {
     return localStorage.getItem('username');
   }
 
-
 }
 
