@@ -1,4 +1,4 @@
-package habitTracker;
+package com.studybuddy.habitTracker;
 
 import com.studybuddy.user.User;
 import jakarta.persistence.Entity;

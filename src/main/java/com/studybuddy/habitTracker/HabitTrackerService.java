@@ -1,4 +1,4 @@
-package habitTracker;
+package com.studybuddy.habitTracker;
 
 import org.springframework.stereotype.Service;
 
