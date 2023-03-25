@@ -7,6 +7,8 @@ import {PomodoroTimerComponent} from "./pomodoro-timer/pomodoro-timer.component"
 import {CalendarComponent} from "./calendar/calendar.component";
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { UserListComponent } from './admin/user-list/user-list.component';
+
 
 const routes: Routes = [
   {path: "", component: WelcomePageComponent},
@@ -15,7 +17,9 @@ const routes: Routes = [
   {path:"timer",component: PomodoroTimerComponent},
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  {path:"calendar", component: CalendarComponent}
+  {path:"calendar", component: CalendarComponent},
+  { path: 'userlist', component: UserListComponent },
+
 ];
 
 @NgModule({
