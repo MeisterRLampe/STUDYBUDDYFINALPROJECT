@@ -12,9 +12,10 @@ import { PomodoroTimerComponent } from './pomodoro-timer/pomodoro-timer.componen
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import {FormsModule} from "@angular/forms";
-
 import { CalendarComponent } from './calendar/calendar.component';
 import {FullCalendarModule} from "@fullcalendar/angular";
+import { AdminModule } from './admin/admin.module';
+
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import {FullCalendarModule} from "@fullcalendar/angular";
     HttpClientModule,
     FormsModule,
     FullCalendarModule,
+    AdminModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

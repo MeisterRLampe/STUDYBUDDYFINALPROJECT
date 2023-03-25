@@ -38,6 +38,7 @@ export class UserService {
     return this.http.post(`${this.apiBaseUrl}/login`, body, { headers: headers });
   }
 
+
   logout(sessionId: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'

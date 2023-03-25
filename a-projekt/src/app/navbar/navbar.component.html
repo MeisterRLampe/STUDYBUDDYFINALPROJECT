@@ -50,6 +50,19 @@
       </div>
     </div>
 
+    <div class="navbar-item has-dropdown is-hoverable" *ngIf="isAdmin()">
+      <a class="navbar-link">
+        Admin
+      </a>
+
+      <div class="navbar-dropdown">
+        <a class="navbar-item" routerLink="userlist">
+          Userlist
+        </a>
+      </div>
+    </div>
+
+
     <div class="navbar-end">
       <div class="navbar-item">
         <!-- Admin-Indikator, der nur angezeigt wird, wenn der Benutzer ein Admin ist -->

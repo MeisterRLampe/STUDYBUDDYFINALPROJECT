@@ -1,9 +1,7 @@
 package com.studybuddy.habitTracker;
 
 import com.studybuddy.user.User;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,8 +25,10 @@ public class Habit {
     @Id
     private Long id;
 
-    private User user;
 
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
 
 
 }
