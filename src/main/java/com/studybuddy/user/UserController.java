@@ -16,11 +16,11 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public User register(@Valid @RequestBody RegisterUser registration) {
+    public Userx register(@Valid @RequestBody RegisterUser registration) {
         if (!registration.getPassword1().equals(registration.getPassword2()) || userRepo.existsByUserName(registration.getUsername())) {
             return null;
         }
-        User user = new User(registration.getUsername(), registration.getPassword1());
+        Userx user = new Userx(registration.getUsername(), registration.getPassword1());
         return userRepo.save(user);
     }
 }

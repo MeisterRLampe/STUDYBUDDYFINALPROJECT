@@ -18,24 +18,24 @@ public class AdminController {
     }
 
     @GetMapping("/userlist")
-    public List<User> showAdminPage() {
-        return (List<User>) userRepo.findAll();
+    public List<Userx> showAdminPage() {
+        return (List<Userx>) userRepo.findAll();
     }
 
     @PostMapping("/userlist")
-    public List<User> refreshAdminPage(@RequestBody List<User> users) {
+    public List<Userx> refreshAdminPage(@RequestBody List<Userx> users) {
         userRepo.saveAll(users);
         return users;
     }
 
     @GetMapping("/user/{id}")
-    public User editUser(@PathVariable long id) {
+    public Userx editUser(@PathVariable long id) {
         return userRepo.findById(id).orElse(null);
     }
 
     @PutMapping("/user/{id}")
-    public User setAdmin(@PathVariable long id) {
-        User user = userRepo.findById(id).orElse(null);
+    public Userx setAdmin(@PathVariable long id) {
+        Userx user = userRepo.findById(id).orElse(null);
         if (user != null) {
             user.setAdmin(!user.isAdmin());
             userRepo.save(user);

@@ -15,6 +15,7 @@ import {FormsModule} from "@angular/forms";
 import { CalendarComponent } from './calendar/calendar.component';
 import {FullCalendarModule} from "@fullcalendar/angular";
 import { AdminModule } from './admin/admin.module';
+import { HabittrackerComponent } from './habittracker/habittracker.component';
 
 
 
@@ -29,6 +30,7 @@ import { AdminModule } from './admin/admin.module';
     LoginComponent,
     RegisterComponent,
     CalendarComponent,
+    HabittrackerComponent,
   ],
   imports: [
     BrowserModule,

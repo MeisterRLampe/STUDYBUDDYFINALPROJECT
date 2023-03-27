@@ -1,19 +1,18 @@
 package com.studybuddy.habitTracker;
 
-import com.studybuddy.user.User;
+import com.studybuddy.user.Userx;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Getter
 @Setter
 @Entity
 public class Habit {
-    private String Habit;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private String name;
     private String description;
     private boolean monday;
     private boolean tuesday;
@@ -22,13 +21,17 @@ public class Habit {
     private boolean friday;
     private boolean saturday;
     private boolean sunday;
-    @Id
-    private Long id;
 
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+
+
+    public Habit (String name){
+        this.name = name;
+
+    }
+    public Habit (){
+
+    }
 
 
 }
