@@ -9,6 +9,7 @@ import {LoginComponent} from './login/login.component';
 import {RegisterComponent} from './register/register.component';
 import {UserListComponent} from './admin/user-list/user-list.component';
 import {HabittrackerComponent} from "./habittracker/habittracker.component";
+import {AboutUsComponent} from "./about-us/about-us.component";
 
 
 const routes: Routes = [
@@ -20,8 +21,8 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: "calendar", component: CalendarComponent},
   {path: 'userlist', component: UserListComponent},
-  {path: 'habitTracker', component: HabittrackerComponent}
-
+  {path: 'habitTracker', component: HabittrackerComponent},
+  {path: 'aboutUS', component: AboutUsComponent}
 ];
 
 @NgModule({
