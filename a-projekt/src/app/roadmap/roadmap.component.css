@@ -98,3 +98,8 @@ details > summary {
 details > summary::-webkit-details-marker {
   display: none;
 }
+
+div{
+  width: 60%;
+  margin-left: 15.5em;
+}
