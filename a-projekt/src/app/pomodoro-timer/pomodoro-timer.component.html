@@ -1,15 +1,18 @@
 <link href="https://fonts.cdnfonts.com/css/mattone" rel="stylesheet">
 <div class="card container">
 
-<div class="timer">
-  {{minutes}}:{{seconds}}
+  <div>
+    <h1>Pomodoro Timer</h1>
+    <div class="timer">
+      <span>{{ minutes < 10 ? '0' + minutes : minutes }}</span>:
+      <span>{{ seconds < 10 ? '0' + seconds : seconds }}</span>
+    </div>
+    <div class="controls">
+      <button (click)="play()">{{ buttonLabel }}</button>
+      <button (click)="stop()">{{ buttonLabel === 'Stop' ? 'Reset' : 'Stop' }}</button>
+    </div>
+    <div class="cycles">
+      <p>Completed Cycles: {{ cycles }}</p>
+    </div>
 </div>
-<div>
-   <button (click)="play()">Play</button>
-
-    <button (click)="stop()">Stop</button>
 </div>
-
-
-</div>
-
