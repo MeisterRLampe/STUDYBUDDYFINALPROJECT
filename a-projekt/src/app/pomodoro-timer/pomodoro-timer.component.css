@@ -90,12 +90,17 @@ button:active {
   font-family: 'Montserrat', sans-serif;
   font-size: 0.85em;
   padding: 20px;
+  margin: 5% 15% 5% 15%;
+text-align: justify;
+
+  letter-spacing: 1px;
 }
 
 .title {
   font-family: 'Mattone', sans-serif;
   font-weight: bolder;
   font-size: 2rem;
+  margin-top: 15%;
 }
 
 

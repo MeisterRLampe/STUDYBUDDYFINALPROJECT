@@ -8,5 +8,6 @@ body {
   width: 100%;
   background: url("/assets/Minh_Hintergrund-02.png");
   background-size: cover;
+  background-attachment: fixed;
 
 }
