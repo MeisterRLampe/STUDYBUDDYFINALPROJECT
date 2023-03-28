@@ -1,14 +1,15 @@
-<div class="container">
+<link href="https://fonts.cdnfonts.com/css/mattone" rel="stylesheet">
+<div class="card container">
 
-<div class="card">
 <div class="timer">
   {{minutes}}:{{seconds}}
 </div>
+<div>
+   <button (click)="play()">Play</button>
+
+    <button (click)="stop()">Stop</button>
+</div>
 
 
-  <div>
-<button (click)="stop()">Stop</button>
-<button (click)="play()">Play</button>
-  </div>
 </div>
-</div>
+

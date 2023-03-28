@@ -1,6 +1,6 @@
 nav {
-  padding: 15px;
-  animation: backcolor 5s linear infinite alternate;
+  padding: 50px;
+  animation: backcolor 1s linear infinite alternate;
   font-size: x-large;
   font-family: 'Gabo Drive', sans-serif;
   font-weight: bold;

@@ -22,7 +22,8 @@ const routes: Routes = [
   {path: "calendar", component: CalendarComponent},
   {path: 'userlist', component: UserListComponent},
   {path: 'habitTracker', component: HabittrackerComponent},
-  {path: 'aboutUS', component: AboutUsComponent}
+  {path: 'aboutUs', component: AboutUsComponent}
+
 ];
 
 @NgModule({
