@@ -1,9 +1,9 @@
 package com.studybuddy.habitTracker;
 
+import com.studybuddy.user.User;
+import com.studybuddy.user.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,7 +32,7 @@ public class HabitTrackerController {
      */
     @GetMapping("/habits/test1")
     public List<Habit> addTestData() {
-        Userx user = new Userx("minh1","minh1");
+        User user = new User("minh1","minh1");
         Habit habit1 = new Habit("essen");
         Habit habit2 = new Habit("lernen");
         user.getHabits().add(habit1);
@@ -46,8 +46,8 @@ public class HabitTrackerController {
 
     }
     @GetMapping("/habits/test2")
-    public Userx getTestUser() {
-        Userx user = new Userx("minh1","minh1");
+    public User getTestUser() {
+        User user = new User("minh1","minh1");
         Habit habit1 = new Habit("essen");
         Habit habit2 = new Habit("lernen");
         user.getHabits().add(habit1);
@@ -62,7 +62,7 @@ public class HabitTrackerController {
 
     }
     @GetMapping("/habits/test3")
-    public Userx getTestUser2() {
+    public User getTestUser2() {
 
 
         return userRepo.findById((long)1).get();
@@ -72,12 +72,12 @@ public class HabitTrackerController {
 
     @GetMapping("/habits/{userId}")
     public List<Habit> getHabitsByUser(@PathVariable long userId) {
-        Userx user = userRepo.findById(userId).get();
+        User user = userRepo.findById(userId).get();
         return user.getHabits();
     }
 
-    @PostMapping("/habits/add")
     public Habit saveHabit(@RequestBody Habit habit) {
+
         return habitRepo.save(habit);
     }
     @DeleteMapping("/habits/{id}")

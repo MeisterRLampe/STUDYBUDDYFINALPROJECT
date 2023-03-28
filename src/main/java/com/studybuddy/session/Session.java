@@ -1,6 +1,6 @@
 package com.studybuddy.session;
 
-import com.studybuddy.user.Userx;
+import com.studybuddy.user.User;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
@@ -17,10 +17,10 @@ public class Session {
     @Id
     private String id = UUID.randomUUID().toString();
     @ManyToOne
-    private Userx user;
+    private User user;
     private Instant expiresAt;
 
-    public Session(Userx user, Instant expiresAt) {
+    public Session(User user, Instant expiresAt) {
         this.user = user;
         this.expiresAt = expiresAt;
     }

@@ -16,7 +16,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Userx {
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long userID;
@@ -27,7 +27,7 @@ public class Userx {
     private boolean isAdmin;
 
 
-    public Userx(String userName, String password) {
+    public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
     }
