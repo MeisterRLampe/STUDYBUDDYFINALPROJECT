@@ -19,6 +19,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
 }
 
 button {
@@ -47,5 +48,54 @@ button:active {
 }
 .timer{
   font-size: 5rem;
+  display: flex;
+  justify-content: center;
 
 }
+.round-time-bar div {
+  height: 5px;
+  background: #788BFF;
+  animation: roundtime calc(var(--duration) * 1s) steps(var(--duration)) forwards;
+  transform-origin: left center;
+}
+.cycles {
+  display: flex;
+  justify-content: center;
+}
+@keyframes roundtime {
+  to {
+
+    transform: scaleX(0);
+  }
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+
+}
+.left, .right {
+  flex : 1;
+}
+
+
+.left  {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.subtitle{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85em;
+  padding: 20px;
+}
+
+.title {
+  font-family: 'Mattone', sans-serif;
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+
