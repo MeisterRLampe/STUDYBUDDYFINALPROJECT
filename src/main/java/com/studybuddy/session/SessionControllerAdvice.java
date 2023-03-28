@@ -1,6 +1,6 @@
 package com.studybuddy.session;
 
-import com.studybuddy.user.User;
+import com.studybuddy.user.Userx;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -20,7 +20,7 @@ public class SessionControllerAdvice {
     }
 
     @ModelAttribute("sessionUser")
-    public User sessionUser(@CookieValue(value = "sessionId", defaultValue = "") String sessionId) {
+    public Userx sessionUser(@CookieValue(value = "sessionId", defaultValue = "") String sessionId) {
         if (!sessionId.isEmpty()) {
             Optional<Session> sessionOpt = sessionRepo.findByIdAndExpiresAtAfter(sessionId, Instant.now());
             if (sessionOpt.isPresent()) {

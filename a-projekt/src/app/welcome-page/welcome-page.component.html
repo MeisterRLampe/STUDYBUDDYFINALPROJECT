@@ -3,8 +3,9 @@
 
 <div class="div-container" *ngIf="!isLoggedIn()">
   <span>
-    <a routerLink="/register" class="button">Sign Up</a>
-    <a routerLink="/login" class="button">Login</a>
+
+    <button class="knopf"><a routerLink="/register" >Sign Up</a></button>
+    <button class="knopf"><a routerLink="/login" >Login</a></button>
   </span>
 </div>
 <router-outlet></router-outlet>

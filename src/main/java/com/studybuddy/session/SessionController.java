@@ -1,6 +1,6 @@
 package com.studybuddy.session;
 
-import com.studybuddy.user.User;
+import com.studybuddy.user.Userx;
 import com.studybuddy.user.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,8 +23,8 @@ public class SessionController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<?> loginUser(@RequestBody User user) {
-        Optional<User> userOpt = userRepo.findByUserNameAndPassword(user.getUserName(), user.getPassword());
+    public ResponseEntity<?> loginUser(@RequestBody Userx user) {
+        Optional<Userx> userOpt = userRepo.findByUserNameAndPassword(user.getUserName(), user.getPassword());
         if (userOpt.isPresent()) {
             Session session = new Session(userOpt.get(), Instant.now().plusSeconds(7 * 24 * 60 * 60));
             sessionRepo.save(session);
