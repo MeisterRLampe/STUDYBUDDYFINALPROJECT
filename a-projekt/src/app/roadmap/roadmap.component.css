@@ -81,3 +81,12 @@ li {
 .tree > li > span:before {
   outline: none;
 }
+
+.content {
+  display: block;
+  overflow: hidden;
+}
+
+.collapsible {
+  cursor: pointer;
+}

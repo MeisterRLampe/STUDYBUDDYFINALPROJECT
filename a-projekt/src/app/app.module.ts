@@ -19,9 +19,6 @@ import { HabittrackerComponent } from './habittracker/habittracker.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
