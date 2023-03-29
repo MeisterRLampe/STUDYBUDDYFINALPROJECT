@@ -83,3 +83,8 @@ knopf. :active {
   text-align: justify;
 
 }
+img h1 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
