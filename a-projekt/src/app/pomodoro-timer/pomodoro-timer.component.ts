@@ -12,7 +12,7 @@ export class PomodoroTimerComponent implements OnInit {
 
   timer: any;
   isStop: boolean = true;
-  buttonLabel: string = "Start!";
+  buttonLabel: string = "Start";
 
   ngOnInit(): void {
     // Der Code zum Starten des Timers wird aus dieser Funktion entfernt
