@@ -1,8 +1,106 @@
-.middle{
-  font-size: 20px;
-  display:flex;
+body {
+  background: #9381FF;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
   align-items: center;
-  padding: 200px;
-  margin: 150px;
-  flex-direction: column;
+  justify-content: center;
 }
+
+.card {
+  margin-top: 10%;
+  width: 400px;
+  height: 400px;
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: 20px 20px 60px #bebebe,
+  -20px -20px 60px #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+button {
+  color: #090909;
+  padding: 0.7em 1.7em;
+  font-size: 18px;
+  font-family: 'Mattone', sans-serif;
+  border-radius: 0.5em;
+  background: #e8e8e8;
+  border: 1px solid #e8e8e8;
+  transition: all .3s;
+  box-shadow: 6px 6px 12px #c5c5c5,
+  -6px -6px 12px #ffffff;
+  margin: 20px;
+  margin-top: 50px;
+
+}
+
+button:hover {
+  border: 1px solid white;
+}
+
+button:active {
+  box-shadow: 4px 4px 12px #c5c5c5,
+  -4px -4px 12px #ffffff;
+}
+.timer{
+  font-size: 5rem;
+  display: flex;
+  justify-content: center;
+
+}
+.round-time-bar div {
+  height: 5px;
+  background: #788BFF;
+  animation: roundtime calc(var(--duration) * 1s) steps(var(--duration)) forwards;
+  transform-origin: left center;
+}
+.cycles {
+  display: flex;
+  justify-content: center;
+}
+@keyframes roundtime {
+  to {
+
+    transform: scaleX(0);
+  }
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+
+}
+.left, .right {
+  flex : 1;
+}
+
+
+.left  {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.subtitle{
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85em;
+  padding: 20px;
+  margin: 5% 15% 5% 15%;
+text-align: justify;
+
+  letter-spacing: 1px;
+}
+
+.title {
+  font-family: 'Mattone', sans-serif;
+  font-weight: bolder;
+  font-size: 2rem;
+  margin-top: 15%;
+}
+
+

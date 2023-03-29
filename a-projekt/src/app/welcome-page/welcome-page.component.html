@@ -1,10 +1,34 @@
-<h1 *ngIf="!isLoggedIn()">Welcome</h1>
-<h1 *ngIf="isLoggedIn()">Welcome {{getUsername()}}</h1>
+<link href="https://fonts.cdnfonts.com/css/mattone" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 
-<div class="div-container" *ngIf="!isLoggedIn()">
-  <span>
-    <a routerLink="/register" class="button">Sign Up</a>
-    <a routerLink="/login" class="button">Login</a>
-  </span>
+<div class="hero-body overlay">
+  <div class="container">
+    <div class="columns is-vcentered">
+      <div class="column is-one-third">
+      <p class="title is-1">
+        Studdybuddy
+      </p>
+      <p class="subtitle">
+        Organize your thoughts and fuel your training!
+      </p>
+      </div>
+      <div class="column-is-two-thirds cover">
+        <img src="/assets/favpng_distance-education-e-learning-vector-graphics-continuing-education.png" alt="learning illustration" class="scale">
+
+      </div>
+    </div>
+  </div>
 </div>
+
+<section class="hero is-link py-4">
+  <div class="hero-body">
+    <p class="title">
+      About Studdybuddy
+    </p>
+    <p class="subtitle">
+      A tool for students made by students.
+      We had the same struggles, just as you and are here to optimize your training!
+    </p>
+  </div>
+</section>
 <router-outlet></router-outlet>

@@ -1,13 +1,21 @@
 package com.studybuddy.user;
 
 
+import com.studybuddy.habitTracker.Habit;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
 @NoArgsConstructor
+@Getter
+@Setter
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -23,4 +31,6 @@ public class User {
         this.userName = userName;
         this.password = password;
     }
+    @ManyToMany
+    private List<Habit> habits = new ArrayList<>();
 }

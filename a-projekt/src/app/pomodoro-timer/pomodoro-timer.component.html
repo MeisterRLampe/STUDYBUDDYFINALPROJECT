@@ -1,6 +1,38 @@
-<span class="middle">
-  {{minutes}}:{{seconds}}
- <span ><button (click)="stop()">Stop</button>
-  <span><button (click)="play()">Play</button></span>
- </span>
-</span>
+<link href="https://fonts.cdnfonts.com/css/mattone" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<div class="flex-container">
+  <div class="left">
+    <h1 class="title"> Pomodoro Timer ?</h1>
+    <p class="subtitle">Are you tired of feeling overwhelmed and unproductive? Do you want to level up your productivity game? Say hello to the Pomodoro Timer!
+
+      This time-management technique is the secret weapon of successful people everywhere. With its sleek and user-friendly design, the Pomodoro Timer helps you break down your work into bite-sized chunks of focused effort. You'll crush your to-do list in no time, while still having plenty of time to kick back and relax.
+
+      But that's not all. By taking regular breaks, you'll give your brain the chance to recharge and come up with brilliant new ideas. You'll be amazed at how much more creative and focused you can be when you give yourself permission to take a breather.
+
+      So, what are you waiting for? Get your Pomodoro Timer today and start living your most productive, focused, and cool life yet!</p>
+  </div>
+<div class="right">
+  <div class="card container ">
+
+    <div>
+      <div class="timer">
+        <span>{{ minutes < 10 ? '0' + minutes : minutes }}</span>:
+        <span>{{ seconds < 10 ? '0' + seconds : seconds }}</span>
+      </div>
+
+      <div class="round-time-bar" style="--duration: '{{ minutes * 60 + seconds}}s;' ">
+        <div></div>
+      </div>
+      <div class="controls">
+        <button (click)="play()">{{ buttonLabel }}</button>
+        <button (click)="stop()">{{ buttonLabel === 'Stop' ? 'Reset' : 'Stop' }}</button>
+      </div>
+      <div class="cycles">
+        <p>Completed Cycles: {{ cycles }}</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>

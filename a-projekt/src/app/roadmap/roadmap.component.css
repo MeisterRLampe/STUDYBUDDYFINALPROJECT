@@ -1,5 +1,5 @@
 body {
-  font-family: Calibri, Segoe, "Segoe UI", "Gill Sans", "Gill Sans MT", sans-serif;
+  font-family: 'Mattone', sans-serif;
 }
 
 li {
@@ -52,7 +52,9 @@ li {
 }
 /* If the tree represents DOM structure */
 .tree code {
-  font-family: monaco, Consolas, 'Lucida Console', monospace;
+  font-family: 'Mattone', sans-serif;
+  color:#9BB1FF ;
+  letter-spacing: 2px;
 }
 
 /* | */
@@ -80,4 +82,26 @@ li {
 .tree > li > code:before,
 .tree > li > span:before {
   outline: none;
+}
+
+.content {
+  display: block;
+  overflow: hidden;
+}
+
+.collapsible {
+  cursor: pointer;
+}
+
+
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+div{
+  width: 60%;
+  margin-left: 15.5em;
 }

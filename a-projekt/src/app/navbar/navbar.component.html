@@ -1,20 +1,34 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+<link href="https://fonts.cdnfonts.com/css/mattone" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/kaftan-serif-trial" rel="stylesheet">
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="https://bulma.io">
-      <img src="/logoBud.png" width="112" height="28">
-    </a>
 
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
+<nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+  <div class="navbar-start">
+    <div class="navbar-item">
+      <!-- Admin-Indikator, der nur angezeigt wird, wenn der Benutzer ein Admin ist -->
+      <span *ngIf="isAdmin()" class="tag is-warning">Admin</span>
+    </div>
+    <div class="navbar-item" *ngIf="!isLoggedIn()">
+      <div class="buttons">
+
+        <a class="button" routerLink="/login">
+          Log in
+        </a>
+      </div>
+    </div>
+    <div class="navbar-item" *ngIf="isLoggedIn()">
+      <div class="buttons">
+        <a class="button" (click)="logout()">
+          Logout
+        </a>
+      </div>
+    </div>
   </div>
 
   <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
+    <div class="navbar-end">
       <a class="navbar-item" routerLink="">
         Home
       </a>
@@ -26,10 +40,13 @@
       <a class="navbar-item" routerLink="hub">
         Learning Hub
       </a>
+      <a class="navbar-item" routerLink="aboutUs">
+        Team
+      </a>
 
       <div class="navbar-item has-dropdown is-hoverable">
         <a class="navbar-link">
-          More
+          Study tools
         </a>
 
         <div class="navbar-dropdown">
@@ -39,7 +56,7 @@
           <a class="navbar-item" routerLink="timer">
             Timer
           </a>
-          <a class="navbar-item">
+          <a class="navbar-item" routerLink="habitTracker">
             Habit Tracker
           </a>
           <hr class="navbar-divider">
@@ -62,30 +79,7 @@
       </div>
     </div>
 
-
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <!-- Admin-Indikator, der nur angezeigt wird, wenn der Benutzer ein Admin ist -->
-        <span *ngIf="isAdmin()" class="tag is-warning">Admin</span>
-      </div>
-      <div class="navbar-item" *ngIf="!isLoggedIn()">
-        <div class="buttons">
-          <a class="button is-primary" routerLink="/register">
-            <strong>Sign up</strong>
-          </a>
-          <a class="button is-light" routerLink="/login">
-            Log in
-          </a>
-        </div>
-      </div>
-      <div class="navbar-item" *ngIf="isLoggedIn()">
-        <p>Hello {{ getUsername() }}</p>
-        <div class="buttons">
-          <a class="button is-light" (click)="logout()">
-            Logout
-          </a>
-        </div>
-      </div>
-    </div>
   </div>
+
+
 </nav>

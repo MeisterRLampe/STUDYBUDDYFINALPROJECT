@@ -13,7 +13,10 @@ import java.util.List;
 @Setter
 @Entity
 public class Habit {
-    private String Habit;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    private String name;
     private String description;
     private boolean monday;
     private boolean tuesday;
@@ -22,13 +25,17 @@ public class Habit {
     private boolean friday;
     private boolean saturday;
     private boolean sunday;
-    @Id
-    private Long id;
 
 
-    @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User user;
+
+
+    public Habit (String name){
+        this.name = name;
+
+    }
+    public Habit (){
+
+    }
 
 
 }

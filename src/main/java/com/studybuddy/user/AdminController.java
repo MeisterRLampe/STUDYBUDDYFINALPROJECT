@@ -33,7 +33,7 @@ public class AdminController {
         return userRepo.findById(id).orElse(null);
     }
 
-    @PutMapping("/user/{id}")
+    @PostMapping("/user/{id}")
     public User setAdmin(@PathVariable long id) {
         User user = userRepo.findById(id).orElse(null);
         if (user != null) {
