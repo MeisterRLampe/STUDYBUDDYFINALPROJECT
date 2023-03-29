@@ -81,3 +81,25 @@ li {
 .tree > li > span:before {
   outline: none;
 }
+
+.content {
+  display: block;
+  overflow: hidden;
+}
+
+.collapsible {
+  cursor: pointer;
+}
+
+
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+div{
+  width: 60%;
+  margin-left: 15.5em;
+}

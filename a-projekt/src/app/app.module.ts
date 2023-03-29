@@ -20,9 +20,6 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { FooterComponent } from './footer/footer.component';
 
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
