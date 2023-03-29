@@ -208,3 +208,21 @@ label {
 .form button:hover {
   background-color: #788BFF;
 }
+
+.form-toggle {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.form-toggle button {
+  flex: 1;
+  background-color: #ccc;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.form-toggle button.active {
+  background-color: #eee;
+}

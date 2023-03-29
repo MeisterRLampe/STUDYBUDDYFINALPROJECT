@@ -11,13 +11,13 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  register(username: string, password: string, confirmPassword: string): Observable<any> {
+  register(userName: string, password: string, confirmPassword: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
 
     const body = {
-      username: username,
+      userName: userName,
       password1: password,
       password2: confirmPassword
     };
@@ -25,13 +25,13 @@ export class UserService {
     return this.http.post(`${this.apiBaseUrl}/register`, body, { headers: headers });
   }
 
-  login(username: string, password: string): Observable<any> {
+  login(userName: string, password: string): Observable<any> {
     const headers = new HttpHeaders({
       'Content-Type': 'application/json'
     });
 
     const body = {
-      userName: username,
+      userName: userName,
       password: password
     };
 
