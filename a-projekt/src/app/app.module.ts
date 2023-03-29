@@ -17,6 +17,7 @@ import {FullCalendarModule} from "@fullcalendar/angular";
 import { AdminModule } from './admin/admin.module';
 import { HabittrackerComponent } from './habittracker/habittracker.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     CalendarComponent,
     HabittrackerComponent,
     AboutUsComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

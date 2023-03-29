@@ -112,7 +112,7 @@ label {
   position: relative;
   display: flex;
   flex-direction: column;
-  background-color: #9381FF;
+  background-color: #5465FF;
   max-height: 515px;
   overflow: hidden;
   border-radius: 12px;
@@ -196,7 +196,7 @@ label {
   height: 40px;
   margin: 12px auto 10%;
   color: #fff;
-  background: #573b8a;
+  background: #788BFF;
   font-size: 1rem;
   font-weight: bold;
   border: none;
@@ -206,5 +206,5 @@ label {
 }
 
 .form button:hover {
-  background-color: #6d44b8;
+  background-color: #788BFF;
 }

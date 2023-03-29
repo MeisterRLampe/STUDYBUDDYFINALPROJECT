@@ -72,12 +72,6 @@ export class PomodoroTimerComponent implements OnInit {
     this.cycles = 0;
     this.buttonLabel = "Start!";
   }
-
-  // Funktion zum Setzen der Timer-Zeit
-  setTime(minutes: number, seconds: number) {
-    this.minutes = minutes;
-    this.seconds = seconds;
-  }
 }
 
 

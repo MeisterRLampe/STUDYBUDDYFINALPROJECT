@@ -4,19 +4,31 @@
 <link href="https://fonts.cdnfonts.com/css/kaftan-serif-trial" rel="stylesheet">
 
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
+<nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+  <div class="navbar-start">
+    <div class="navbar-item">
+      <!-- Admin-Indikator, der nur angezeigt wird, wenn der Benutzer ein Admin ist -->
+      <span *ngIf="isAdmin()" class="tag is-warning">Admin</span>
+    </div>
+    <div class="navbar-item" *ngIf="!isLoggedIn()">
+      <div class="buttons">
 
-
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
+        <a class="button" routerLink="/login">
+          Log in
+        </a>
+      </div>
+    </div>
+    <div class="navbar-item" *ngIf="isLoggedIn()">
+      <div class="buttons">
+        <a class="button" (click)="logout()">
+          Logout
+        </a>
+      </div>
+    </div>
   </div>
 
   <div id="navbarBasicExample" class="navbar-menu">
-    <div class="navbar-start">
+    <div class="navbar-end">
       <a class="navbar-item" routerLink="">
         Home
       </a>
@@ -29,7 +41,7 @@
         Learning Hub
       </a>
       <a class="navbar-item" routerLink="aboutUs">
-        Meet the Team
+        Team
       </a>
 
       <div class="navbar-item has-dropdown is-hoverable">
@@ -67,28 +79,7 @@
       </div>
     </div>
 
-
-    <div class="navbar-end">
-      <div class="navbar-item">
-        <!-- Admin-Indikator, der nur angezeigt wird, wenn der Benutzer ein Admin ist -->
-        <span *ngIf="isAdmin()" class="tag is-warning">Admin</span>
-      </div>
-      <div class="navbar-item" *ngIf="!isLoggedIn()">
-        <div class="buttons">
-
-          <a class="button" routerLink="/login">
-            Log in
-          </a>
-        </div>
-      </div>
-      <div class="navbar-item" *ngIf="isLoggedIn()">
-        <p>Hello {{ getUsername() }}</p>
-        <div class="buttons">
-          <a class="button is-light" (click)="logout()">
-            Logout
-          </a>
-        </div>
-      </div>
-    </div>
   </div>
+
+
 </nav>

@@ -13,9 +13,9 @@ body {
 
 .card {
   margin: 2%;
-  background: #BFD7FF;
+  background: #788BFF;
   width: 10%;
-  height: 50%;
+  height: 75%;
   box-shadow: 0 2px 3px 0px rgba(0, 0, 0, 0.25);
   border-radius: 3px;
   transition: .2s all;
@@ -24,6 +24,7 @@ body {
   text-align: center;
   font-size: 13px;
   padding-top: 30px;
+  flex: 1;
 }
 
 .card > span {
@@ -44,6 +45,7 @@ body {
   filter: blur(0px);
   opacity: 1;
   box-shadow: 0 8px 20px 0px rgba(0, 0, 0, 0.125);
-  background: #788BFF;
+  background: #5465FF;
   color: white;
+  flex: 2;
 }

@@ -1,3 +1,4 @@
+
 h1 {
   font-size: 6em;
   display: grid;
@@ -35,3 +36,17 @@ knopf. :active {
   box-shadow: 0 0 0 0 black;
 }
 
+.scale{
+
+  overflow: hidden;
+
+}
+.cover {
+  max-width: 100%;
+  max-height: 100%;
+  margin-left: 30%;
+}
+.cover img {
+  max-width: 100%;
+  max-height: 100%;
+}
