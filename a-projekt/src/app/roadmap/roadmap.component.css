@@ -53,6 +53,8 @@ li {
 /* If the tree represents DOM structure */
 .tree code {
   font-family: 'Mattone', sans-serif;
+  color:#9BB1FF ;
+  letter-spacing: 2px;
 }
 
 /* | */
