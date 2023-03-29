@@ -18,6 +18,8 @@ import { AdminModule } from './admin/admin.module';
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +31,8 @@ import { AdminModule } from './admin/admin.module';
     LoginComponent,
     RegisterComponent,
     CalendarComponent,
+
+
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,7 @@ import { AdminModule } from './admin/admin.module';
     FullCalendarModule,
     AdminModule,
   ],
-  providers: [],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
