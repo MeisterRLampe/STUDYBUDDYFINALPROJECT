@@ -1,5 +1,5 @@
-<div class="learner-hub-container" *ngIf="loggedIn">
-  <h2>Neuer Beitrag</h2>
+<div class="learner-hub-container">
+  <h2>New Post</h2>
   <form (ngSubmit)="addPost()" #postForm="ngForm">
     <div class="form-group">
       <label for="title">Titel</label>
@@ -13,7 +13,7 @@
       />
     </div>
     <div class="form-group">
-      <label for="content">Inhalt</label>
+      <label for="content">Content</label>
       <textarea
         class="form-control"
         id="content"
@@ -24,11 +24,11 @@
       ></textarea>
     </div>
     <button type="submit" class="btn btn-primary" [disabled]="!postForm.valid">
-      Beitrag hinzufügen
+      Post
     </button>
   </form>
 
-  <h2>Beiträge</h2>
+  <h2>Posts</h2>
   <div class="post-list">
     <div *ngFor="let post of posts" class="post">
       <span>Title:</span><h3>{{ post.title }}</h3>
