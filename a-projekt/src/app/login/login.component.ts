@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
     this.userService.register(this.username, this.password, this.confirmPassword).subscribe(
       data => {
         this.message = 'Registrierung erfolgreich! Sie werden weitergeleitet..';
-        this.router.navigate(['/login']);
+        this.router.navigate(['/']);
       },
       error => {
         this.message = 'Registrierung fehlgeschlagen!';

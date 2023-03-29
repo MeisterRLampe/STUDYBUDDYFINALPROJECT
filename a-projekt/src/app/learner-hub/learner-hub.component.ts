@@ -10,7 +10,7 @@ import { Post } from '../models/post.model';
 export class LearnerHubComponent implements OnInit {
   posts: Post[] = [];
   newPost: Post = new Post();
-  userName?: string;
+  username?: string;
   loggedIn = false;
 
   constructor(private postService: PostService) { }
@@ -23,7 +23,7 @@ export class LearnerHubComponent implements OnInit {
   checkLoginStatus() {
     const userNameFromStorage = localStorage.getItem('username');
     if (userNameFromStorage) {
-      this.userName = userNameFromStorage;
+      this.username = userNameFromStorage;
       this.loggedIn = true;
     } else {
       this.loggedIn = false;
@@ -37,11 +37,11 @@ export class LearnerHubComponent implements OnInit {
   }
 
   addPost(): void {
-    if (!this.userName) {
+    if (!this.username) {
       return;
     }
 
-    this.newPost.user = { userName: this.userName,
+    this.newPost.user = { username: this.username,
       userID: 0,
       password: '',
       admin: false};
