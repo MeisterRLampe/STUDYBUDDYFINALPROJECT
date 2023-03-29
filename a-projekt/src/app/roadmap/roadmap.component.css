@@ -1,5 +1,5 @@
 body {
-  font-family: Calibri, Segoe, "Segoe UI", "Gill Sans", "Gill Sans MT", sans-serif;
+  font-family: 'Mattone', sans-serif;
 }
 
 li {
@@ -52,7 +52,7 @@ li {
 }
 /* If the tree represents DOM structure */
 .tree code {
-  font-family: monaco, Consolas, 'Lucida Console', monospace;
+  font-family: 'Mattone', sans-serif;
 }
 
 /* | */
