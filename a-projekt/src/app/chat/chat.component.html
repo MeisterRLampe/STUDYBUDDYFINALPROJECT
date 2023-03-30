@@ -1,0 +1,11 @@
+<div class="chat-container" *ngIf="isChatOpen">
+  <button class="close-chat-button" (click)="closeChat()">Close Chat</button>
+  <div class="messages">
+    <p *ngFor="let message of messages" [ngClass]="{'user-message': message.startsWith('Java Superstar:'), 'gpt-message': message.startsWith('Studybuddy:')}">{{ message }}</p>
+  </div>
+  <div class="input-container">
+    <input [(ngModel)]="inputMessage" (keydown.enter)="sendMessage()" />
+    <button (click)="sendMessage()">Send</button>
+  </div>
+</div>
+<button class="open-chat-button" *ngIf="!isChatOpen" (click)="openChat()">Open Chat</button>

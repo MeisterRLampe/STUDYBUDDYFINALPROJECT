@@ -18,6 +18,10 @@ import { AdminModule } from './admin/admin.module';
 import { HabittrackerComponent } from './habittracker/habittracker.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { FooterComponent } from './footer/footer.component';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { ChatComponent } from './chat/chat.component';
+
+const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
 
 @NgModule({
@@ -34,6 +38,8 @@ import { FooterComponent } from './footer/footer.component';
     HabittrackerComponent,
     AboutUsComponent,
     FooterComponent,
+    ChatComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -42,6 +48,7 @@ import { FooterComponent } from './footer/footer.component';
     FormsModule,
     FullCalendarModule,
     AdminModule,
+    SocketIoModule.forRoot(config)
   ],
   providers: [],
   bootstrap: [AppComponent]
